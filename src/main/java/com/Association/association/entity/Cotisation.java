@@ -34,7 +34,9 @@ import java.util.Optional;
     @JoinColumn(name = "membre", referencedColumnName = "id")
 
     private Membre membre;
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "type_cotisation", referencedColumnName = "id")
+    private  TypeCotisation typeCotisation;
     public Cotisation() {}
 
     public Cotisation(Long id, LocalDate datePaiement, BigDecimal montant, Membre membre) {
